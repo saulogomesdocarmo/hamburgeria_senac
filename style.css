@@ -1,0 +1,187 @@
+@charset "UTF-8";
+/* Fonte externa - Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* CSS - Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Variáveis*/
+:root {
+    --font-titulo: "Montserrat", sans-serif;
+    --font-texto: "Roboto", sans-serif;
+
+    --cor-tela-inicial: #FFBE32;
+    --cor-menu: #FFD900;
+    --cor-preco: #E81809;
+    --cor-branco: #FFFFFF;
+    --cor-preto: #000000;
+}
+
+/*Tela Inicio*/
+.propagandas {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-position: 20%;
+    font-family: var(--font-titulo);
+    z-index: 1;
+}
+
+/* Banner */
+.promocao {
+    width: 100%;
+    height: 85%;
+}
+
+.comecar {
+    background: var(--cor-tela-inicial);
+    width: 100vw;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -4px;
+}
+
+/* Animação da Tela Inicial */
+@keyframes desaparecer {
+    0% {
+        top: 0%
+    }
+
+    99% {
+        z-index: 1;
+    }
+
+    100% {
+        top: -200%;
+        z-index: -999;
+    }
+}
+
+.subir {
+    animation: desaparecer 4s forwards;
+}
+
+/*Menu - Lateral e Cards Lanches*/
+.inicio {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+}
+
+.menu {
+    background: var(--cor-menu);
+    width: 20vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Animação do Incone Lateral */
+
+@keyframes crescer {
+    0% {
+        scale: 0;
+    }
+
+    100% {
+        scale: 1.2;
+    }
+}
+
+.crescer {
+    animation: crescer 1s forwards;
+}
+
+/*Lanches*/
+.lanches{
+    width: 80%;
+    height: 100%;
+    margin-left: 21%;
+    position: sticky;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.lanche{
+    width: 30%;
+    height: 35%;
+    margin-top: 1%;
+    border: 1px solid var(--cor-menu);
+    border-radius: 5px 5px;
+    text-align: center;
+}
+
+.lanche img{
+    width: 99%;
+    height: 70%;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.lanche h2 {
+    padding-top: 5px;
+    font-family: var(--font-titulo);
+    font-size: 0.9em;
+}
+
+.lanche p {
+    color: var(--cor-preco);
+    padding-top: 5px;
+    font-family: var(--font-texto);
+    font-size: 0.8em;
+}
+
+/*Lanche selecionado*/
+
+.lanche_selecionado{
+    width: 70%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid var(--cor-menu);
+    border: 5px;
+    top:50%;
+    left: 21%;
+    text-align: center;
+    font-family: var(--font-titulo);
+}
+
+.lanche_selecionado img{
+    width: 99%;
+    height: 50%;
+}
+
+.lanche_selecionado p{
+    font-size: 1.4em;
+    padding-top: 5px;
+}
+
+.btn{
+    background: var(--cor-menu);
+    width: 80%;
+    height: 8%;
+    border-radius: 30px;
+    border: none;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-top: 10px;
+
+
+
+}
